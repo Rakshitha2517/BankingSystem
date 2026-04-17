@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank System</title>
+</head>
+<body>
+    <h1>Bank System</h1>
+
+    <h2>Balance: {{ balance }}</h2>
+
+    <form action="/deposit" method="post">
+        <input type="number" name="amount" placeholder="Enter amount">
+        <button type="submit">Deposit</button>
+    </form>
+
+    <form action="/withdraw" method="post">
+        <input type="number" name="amount" placeholder="Enter amount">
+        <button type="submit">Withdraw</button>
+    </form>
+
+    <br>
+    <a href="/transactions">View Transactions</a>
+
+    <p>{{ msg }}</p>
+</body>
+</html>
