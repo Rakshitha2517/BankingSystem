@@ -20,5 +20,8 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Check app syntax
+    - name: Check Python syntax
       run: python -m py_compile app.py
+
+    - name: Basic import test
+      run: python -c "import app; print('App import successful')"
