@@ -14,23 +14,36 @@
     </style>
 </head>
 <body>
-    <h1>Bank System</h1>
 
-    <h2>Balance: {{ balance }}</h2>
+<h1>Bank System</h1>
 
-    <form action="/deposit" method="post">
-        <input type="number" name="amount" placeholder="Enter amount"><br>
-        <button type="submit">Deposit</button>
-    </form>
+<h2>Balance: {{ balance }}</h2>
 
-    <form action="/withdraw" method="post">
-        <input type="number" name="amount" placeholder="Enter amount"><br>
-        <button type="submit">Withdraw</button>
-    </form>
+<form action="/deposit" method="post">
+    <input type="number" name="amount" placeholder="Enter amount"><br>
+    <button type="submit">Deposit</button>
+</form>
 
-    <br>
-    <a href="/transactions">View Transactions</a>
+<form action="/withdraw" method="post">
+    <input type="number" name="amount" placeholder="Enter amount"><br>
+    <button type="submit">Withdraw</button>
+</form>
 
-    <p>{{ msg }}</p>
+<p>{{ msg }}</p>
+
+<hr>
+
+<h2>Transaction History</h2>
+
+{% if transactions %}
+    <ul>
+    {% for t in transactions %}
+        <li>{{ t }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No transactions yet</p>
+{% endif %}
+
 </body>
 </html>
